@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="actions">
+        <mat-form-field appearance="outline">
+            <mat-label>Sort</mat-label>
+            <mat-select panelClass="sort-select" [(ngModel)]="sort" (selectionChange)="searchGame(sort)">
+                <mat-option value="name">Name</mat-option>
+                <mat-option value="-released">Released</mat-option>
+                <mat-option value="-added">Added</mat-option>
+                <mat-option value="-created">Created</mat-option>
+                <mat-option value="-updated">Updated</mat-option>
+                <mat-option value="-rating">Rating</mat-option>
+                <mat-option value="-added">Added</mat-option>
+                <mat-option value="metacritic">Metacritic</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+<div class="no-result" *ngIf="gameList.length <=0">
+    No Result! Check keywords!
+</div>
+    <div class="games">
+        <ng-container *ngFor="let game of gameList">
+            <div class="game" [routerLink]="['/','details', game.id]">
+                <div class="game-image">
+                    <img *ngIf="game.background_image" src="{{game.background_image}}">
+                </div>
+                <div class="game-description">
+                    <div class="name">{{game.name}}</div>
+                    <div class="platform">
+                        <img *ngFor="let Gameplatform of game.parent_platforms"
+                            src="../../../assets/images/platforms/{{Gameplatform.platform.slug}}.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>

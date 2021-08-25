@@ -1,0 +1,15 @@
+<nav>
+    <div class="container" >
+        <span class="name" routerLink="/">RiverOfGames</span>
+        <form  class="search-block d-flex align-items-center" #form="ngForm" (ngSubmit)="Submited(form)">
+            <mat-form-field class="example-full-width" appearance="standard">
+                <mat-label>Search game...</mat-label>
+                <input type="text" name="search" ngModel matInput>
+              </mat-form-field>
+            <button mat-flat-button color="primary" type="submit">
+                Search
+            </button>
+        </form>
+    </div>
+
+</nav>

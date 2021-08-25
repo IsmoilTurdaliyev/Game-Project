@@ -1,0 +1,4 @@
+@import "../styles/variables";
+.content{
+    min-height: calc(100vh - calc(64px + 90px));
+}

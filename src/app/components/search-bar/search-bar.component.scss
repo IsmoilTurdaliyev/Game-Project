@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $navbar_background;
+    color: #fff;
+    box-shadow: 0 5px 10px $shadow_color;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media  (max-width:767px){
+            flex-direction: column;
+        }
+    }
+    .name {
+        font-size: 2em;
+        font-family: 'Shojumaru', cursive;
+        cursor: pointer;
+        cursor: pointer;
+        transition: opacity .3s;
+        &:hover{
+            opacity: .5;
+        }
+    }
+    // mat-form-field{
+    //     background-color: #fff;
+    // }
+}
+::ng-deep {
+    .mat-form-field-underline {
+        background-color: #fff !important;
+    }
+    .mat-input-element{
+        color: #fff;
+    }
+    .mat-form-field-label mat-label{
+        color: #fff;
+    }
+}
